@@ -1,0 +1,9 @@
+{
+    "path" : "~/Downloads/Lending_Club/Lending-Club",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

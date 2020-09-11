@@ -1,0 +1,13 @@
+---
+title: "lending_Club"
+author: "Huiting Sheng, Hua Zou, Lixin Wang"
+date: "9/9/2020"
+output: html_document
+---
+
+## Import Data
+```{r import data}
+data=read.csv("LoanStats3a.csv", heade=T)
+head(data)
+```
+
