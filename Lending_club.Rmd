@@ -9,5 +9,8 @@ output: html_document
 ```{r import data}
 data=read.csv("LoanStats3a.csv", heade=T)
 head(data)
+str(data[grep("open",names(data))])
+df=data[,-c(grep("num_",names(data)),grep("mo",names(data)))]
+str(df)
 ```
 
