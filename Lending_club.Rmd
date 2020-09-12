@@ -38,5 +38,9 @@ loanData = data %>%
 This is written by Hua
 =======
 str(data)
+<<<<<<< HEAD
+
+this is Huiting
+=======
 print(hello)
 >>>>>>> 28b6bf5bc37e8f922fa83ff6f286fdc166bf1841
