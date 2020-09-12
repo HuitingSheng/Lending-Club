@@ -30,3 +30,6 @@ if(!require(e1071)){install.packages('e1071');require(e1071)}
 =======
 print("This the first push by Hua")
 >>>>>>> Huiting1
+
+loanData = data %>%
+  select(loan_amnt, term, int_rate, grade, emp_length, home_ownership, annual_inc, verification_status, loan_status, purpose, addr_state, dti, delinq_2yrs, inq_last_6mths, pub_rec)
