@@ -34,4 +34,9 @@ print("This the first push by Hua")
 loanData = data %>%
   select(loan_amnt, term, int_rate, grade, emp_length, home_ownership, annual_inc, verification_status, loan_status, purpose, addr_state, dti, delinq_2yrs, inq_last_6mths, pub_rec)
 
+<<<<<<< HEAD
 This is written by Hua
+=======
+str(data)
+print(hello)
+>>>>>>> 28b6bf5bc37e8f922fa83ff6f286fdc166bf1841
