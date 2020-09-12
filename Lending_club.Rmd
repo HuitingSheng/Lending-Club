@@ -30,3 +30,6 @@ if(!require(e1071)){install.packages('e1071');require(e1071)}
 =======
 print("This the first push by Hua")
 >>>>>>> Huiting1
+
+
+hi there !!!!!!
