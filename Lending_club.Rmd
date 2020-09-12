@@ -35,5 +35,9 @@ loanData = data %>%
   select(loan_amnt, term, int_rate, grade, emp_length, home_ownership, annual_inc, verification_status, loan_status, purpose, addr_state, dti, delinq_2yrs, inq_last_6mths, pub_rec)
 
 str(data)
+<<<<<<< HEAD
 
 this is Huiting
+=======
+print(hello)
+>>>>>>> 28b6bf5bc37e8f922fa83ff6f286fdc166bf1841
