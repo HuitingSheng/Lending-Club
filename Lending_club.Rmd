@@ -12,7 +12,6 @@ head(data)
 str(data[grep("open",names(data))])
 df=data[,-c(grep("num_",names(data)),grep("mo",names(data)))]
 
-
-cat("hi there!")
+print("hello world")
 ```
 
