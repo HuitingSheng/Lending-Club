@@ -51,9 +51,15 @@ zoeeeeee
 
 hua2
 
+<<<<<<< HEAD
 shffefefefe
 fdfjdkfdfdfd
 
+=======
+hua3
+>>>>>>> f528287a9ad5c9c275c9f4ef8b409441c6944e79
+
+fdfdf
 
 
 
