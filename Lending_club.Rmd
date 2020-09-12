@@ -13,7 +13,9 @@ str(data[grep("open",names(data))])
 df=data[,-c(grep("num_",names(data)),grep("mo",names(data)))]
 
 print("hello world")
+print("test")
 ```
+<<<<<<< HEAD
 
 ## Load in packages
 ```{r loadingPackages}
@@ -25,3 +27,6 @@ if(!require(caret)){install.packages('caret');require(caret)}
 
 if(!require(e1071)){install.packages('e1071');require(e1071)}
 ```
+=======
+print("This the first push by Hua")
+>>>>>>> Huiting1
