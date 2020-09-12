@@ -15,3 +15,13 @@ df=data[,-c(grep("num_",names(data)),grep("mo",names(data)))]
 print("hello world")
 ```
 
+## Load in packages
+```{r loadingPackages}
+if(!require(tidyverse)){install.packages('tidyverse');require(tidyverse)}
+
+if(!require(AppliedPredictiveModeling)){install.packages('AppliedPredictiveModeling');require(AppliedPredictiveModeling)}
+
+if(!require(caret)){install.packages('caret');require(caret)}
+
+if(!require(e1071)){install.packages('e1071');require(e1071)}
+```
