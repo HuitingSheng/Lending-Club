@@ -47,13 +47,9 @@ print(hello)
 
 huiting2
 
-<<<<<<< HEAD
-hua2 
-=======
 zoeeeeee
 
 
 
 
 
->>>>>>> d7e2f49a83a622db58e8f23a2d1b51739b6e79ad
