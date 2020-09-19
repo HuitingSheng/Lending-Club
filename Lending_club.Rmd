@@ -5,61 +5,70 @@ date: "9/9/2020"
 output: html_document
 ---
 
-## Import Data
-```{r import data}
-data=read.csv("LoanStats3a.csv", heade=T)
-head(data)
-str(data[grep("open",names(data))])
-df=data[,-c(grep("num_",names(data)),grep("mo",names(data)))]
-
-print("hello world")
-print("test")
+```{r import library}
+packages=c("caret","ggplot2", "tidyverse", "dplyr", "corrplot")
+## Now load or install&load all
+package.check <- lapply(packages,FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = TRUE)
+    }
+  }
+)
 ```
-<<<<<<< HEAD
 
-## Load in packages
-```{r loadingPackages}
-if(!require(tidyverse)){install.packages('tidyverse');require(tidyverse)}
-
-if(!require(AppliedPredictiveModeling)){install.packages('AppliedPredictiveModeling');require(AppliedPredictiveModeling)}
-
-if(!require(caret)){install.packages('caret');require(caret)}
-
-if(!require(e1071)){install.packages('e1071');require(e1071)}
+```{r}
+data=read.csv("LoanStats3a.csv", header=T)
+data=as_tibble(data)
+data
 ```
-=======
-print("This the first push by Hua")
->>>>>>> Huiting1
+The original data dimension is `r dim(data)`. 
 
-loanData = data %>%
-  select(loan_amnt, term, int_rate, grade, emp_length, home_ownership, annual_inc, verification_status, loan_status, purpose, addr_state, dti, delinq_2yrs, inq_last_6mths, pub_rec)
+```{r split the data into X and Y}
+X=select(data,-loan_status)
+Y=select(data,loan_status) %>%unlist()
+```
 
-<<<<<<< HEAD
-This is written by Hua
-=======
+#### get data structure
+```{r data structure}
 str(data)
-<<<<<<< HEAD
+sapply(data,function(x) length(unique(x)))
+```
+quanlitive: term
+numeric
+suspicious
+```{r clean data }
+## get columns that doesn't have any info
+emptycols=c()
+for (i in 1:ncol(data)){
+  if (all(is.na(data[,i]))) {
+    emptycols=c(emptycols,colnames(data[,i]))
+  }
+}
+emptycols
+## remove the empty columns
+df <- data %>%select(-emptycols)
 
-this is Huiting
-=======
-print(hello)
->>>>>>> 28b6bf5bc37e8f922fa83ff6f286fdc166bf1841
-
-huiting2
-
-zoeeeeee
-
-hua2
-
-<<<<<<< HEAD
-shffefefefe
-fdfjdkfdfdfd
-
-=======
-hua3
->>>>>>> f528287a9ad5c9c275c9f4ef8b409441c6944e79
-
-fdfdf
+str(df)
 
 
+ggplot_missing = function(x) {
+  if (!require(reshape2)) warning("you need to install reshape2")
+  require(reshape2)
+  x %>% is.na %>% melt
+}
+
+
+badaccount=df %>% filter((!loan_status %in% c("Fully Paid", "Current"))) %>% select(-c(pymnt_plan,url,initial_list_status,policy_code, application_type))
+
+table(df$pub_rec)
+filter(badcustom, loan_status=="Does not meet the credit policy. Status:Charged Off")$pymnt_plan
+table(badcustom$next_pymnt_d)
+```
+pymnt_plan=="y" only one record, remove url, initial_list_status,policy_code, application_type
+most charge off account out_prncp is 0
+```{r}
+state=as.table(table(df$addr_state))
+ggplot(state) + geom_histogram()
+```
 
