@@ -4,5 +4,6 @@ LendingClub is an American peer-to-peer lending company, headquartered in San Fr
 
 Our goal is to use the data provided in order to predict if the borrower will repay the loan by its maturity date or not. In particular will will focus on customer's who are deemed high risk for default/charge-off. 
 
-This is test 
-another test
+
+A Rshiny app is built to show the sensitivity and specificity at different threshold for each model. 
+https://shenghuiting.shinyapps.io/Lending_Club/
