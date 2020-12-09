@@ -1,0 +1,13 @@
+name: Lending-Club
+title: Lending-Club
+username:
+account: shenghuiting
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3349017
+bundleId: 3964066
+url: https://shenghuiting.shinyapps.io/Lending-Club/
+when: 1607493882.41298
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: LCDataDictionary.xlsx|LoanStats3a.csv|README.md

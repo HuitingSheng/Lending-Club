@@ -1,14 +1,15 @@
 #install.packages('rsconnect')
 #library(resconnect)
 if (!require(shiny)){install.packages(shiny); require(shiny)}
-if(!require(ggplot2)){install.packages("ggplot2")}
-
+if(!require(ggplot2)){install.packages("ggplot2"); require(ggplot2)}
+library(ggplot2)
+library(pROC)
 load('LCdata.RData')
 
 ui= fluidPage(titlePanel("lending club"),
               sidebarLayout(
                 sidebarPanel(
-                  selectInput(inputId = "model", label="Select a Model", choices = c("Elastic Net", "Kappa","Boost","ALL")),
+                  selectInput(inputId = "model", label="Select a Model", choices = c("Elastic Net", "Boosting using Kappa","Boosting","ALL")),
                   sliderInput(inputId = "threshold1", label = "threshold", min=0, max=1, value=0.2)
                 ),
                 mainPanel(plotOutput(outputId = "AucPlot"))
@@ -23,12 +24,12 @@ server = function(input, output){
         legend("topleft",legend=paste("AUC = ",round(rocOut.glmnet$auc,3)))
 
       }
-      else if(input$model =="Kappa"){
+      else if(input$model =="Boosting using Kappa"){
         plot(rocOutKappa, print.thres = input$threshold1, legacy.axes = TRUE,
              main = "Boosting Using Kappa ROC Curve")
         legend("topleft",legend=paste("AUC = ",round(rocOutKappa$auc,3)))
       }
-      else if(input$model =="Boost"){
+      else if(input$model =="Boosting"){
         plot(rocOutBoost,print.thres = input$threshold1, legacy.axes = TRUE,
              main = "Boosting ROC Curve")
         legend("topleft",legend=paste("AUC = ",round(rocOutBoost$auc,3)))

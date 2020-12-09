@@ -6,4 +6,4 @@ Our goal is to use the data provided in order to predict if the borrower will re
 
 
 A Rshiny app is built to show the sensitivity and specificity at different threshold for each model. 
-https://shenghuiting.shinyapps.io/Lending_Club/
+https://shenghuiting.shinyapps.io/Lending-Club/
